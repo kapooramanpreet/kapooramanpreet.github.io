@@ -1,14 +1,34 @@
- <div class="navbar-fixed">
+<!-- Code for Navbar -->
+<div class="navbar-fixed">
   <nav class="blue-grey darken-4">
      <div class="nav-wrapper">
-       <a href="#" class="brand-logo right" style="margin-right:10%">Amanpreet Kapoor</a>
-       <ul id="nav-mobile" class="left hide-on-med-and-down" style="margin-left:10%">
+       <a href="#" class="right header-name">Amanpreet Kapoor</a>
+       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+       <ul id="nav-mobile" class="left hide-on-med-and-down header-navbar">
          <li class="active"><a href="">Home</a></li>
          <li><a href="">Teaching</a></li>
          <li><a href="">Research</a></li>
+         <li><a href="">Projects</a></li>
          <li><a href="">Blog</a></li>
          <li><a href="">Student Resources</a></li>
        </ul>
      </div>
    </nav>
 </div>
+
+<!-- Code for Navbar mobile version: Make sure to edit this as well-->
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="">Home</a></li>
+  <li><a href="">Teaching</a></li>
+  <li><a href="">Research</a></li>
+  <li><a href="">Projects</a></li>
+  <li><a href="">Blog</a></li>
+  <li><a href="">Student Resources</a></li>
+</ul>
+
+<!-- Code for making navbar responsive-->
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+</script>

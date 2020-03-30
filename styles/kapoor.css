@@ -1,0 +1,17 @@
+.header-name{
+  margin-right:15%;
+  font-size:150%;
+}
+
+.header-navbar{
+  margin-left:10%
+}
+
+footer{
+  position:fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  text-align:center;
+  padding-bottom:1%;
+}
