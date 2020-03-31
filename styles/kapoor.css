@@ -1,10 +1,10 @@
 .header-name{
   margin-right:15%;
-  font-size:150%;
+  font-size:120%;
 }
 
 .header-navbar{
-  margin-left:10%
+  margin-left:15%;
 }
 
 footer{
@@ -14,4 +14,8 @@ footer{
   width:100%;
   text-align:center;
   padding-bottom:1%;
+}
+
+.headshot-text{
+
 }
