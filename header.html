@@ -11,6 +11,7 @@
          <li id="projects_header"><a href="projects.html">Projects</a></li>
          <li id="blog_header"><a href="blog.html">Blog</a></li>
          <li id="resources_header"><a href="resources.html">Student Resources</a></li>
+         <li id="contact_header"><a href="contact.html">Contact</a></li>
        </ul>
      </div>
    </nav>
@@ -24,16 +25,18 @@
   <li><a href="projects.html">Projects</a></li>
   <li><a href="blog.html">Blog</a></li>
   <li><a href="resources.html">Student Resources</a></li>
+  <li><a href="contact.html">Contact</a></li>
 </ul>
 
-<!-- Code for making navbar responsive-->
+
 <script type="text/javascript">
+
+    // Code for making navbar responsive
     $(document).ready(function(){
       $('.sidenav').sidenav();
     });
 
-
-    //Code for changing active tabs
+    // Code for changing active tabs
     switch (window.location.pathname) {
         default:
             $("#home_header").removeClass('active');
@@ -42,6 +45,7 @@
             $("#projects_header").removeClass('active');
             $("#blog_header").removeClass('active');
             $("#resources_header").removeClass('active');
+            $("#contact_header").removeClass('active');
         case '/':
             $('#home_header').addClass('active');
             break;
@@ -54,11 +58,14 @@
         case '/projects.html':
             $('#projects_header').addClass('active');
             break;
+        case '/blog.html':
+            $('#blog_header').addClass('active');
+            break;
         case '/resources.html':
             $('#resources_header').addClass('active');
             break;
-        case '/blog.html':
-            $('#blog_header').addClass('active');
+        case '/contact.html':
+            $('#contact_header').addClass('active');
             break;
     }
 
