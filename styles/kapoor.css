@@ -16,6 +16,48 @@ footer{
   padding-bottom:1%;
 }
 
-.headshot-text{
+.infobar-hr{
+  height:1px;
+  border:solid 0px;
+  background:#cfd8dc;
+  margin-top:15px;
+  background-image: linear-gradient(to right, #cfd8dc, #8e9dba , #cfd8dc);
+}
 
+.infobar-div{
+   text-align:center;
+   border-left:solid 1px #cfd8dc;
+}
+
+.infobar-div-icons{
+   margin-top:10px;
+   font-size:80%;
+}
+
+.infobar-icons{
+   padding-right:2px;
+}
+
+a:visited.infobar-link {
+  color:#263238;
+}
+
+a:link.infobar-link {
+  color:#263238;
+}
+
+a:hover.infobar-link {
+  color:#d84315;
+}
+
+a:visited.infobar-link-text {
+  color:#607d8b;
+}
+
+a:link.infobar-link-text {
+  color:#607d8b;
+}
+
+a:hover.infobar-link-text {
+  color:#d84315;
 }
