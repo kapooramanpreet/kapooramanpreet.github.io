@@ -1,5 +1,5 @@
 .header-name{
-  margin-right:19%;
+  margin-right:23%;
   font-size:150%;
 }
 
@@ -27,6 +27,7 @@ footer{
 .infobar-div{
    text-align:center;
    border-left:solid 1px #cfd8dc;
+   height: 100%;
 }
 
 .infobar-div-icons{
@@ -60,4 +61,12 @@ a:link.infobar-link-text {
 
 a:hover.infobar-link-text {
   color:#d84315;
+}
+
+.main-hr{
+  height:1px;
+  border:solid 0px;
+  background:#cfd8dc;
+  margin-top:15px;
+  background-image: linear-gradient(to right, #cfd8dc, #8e9dba , #cfd8dc);
 }
