@@ -16,6 +16,12 @@ footer{
   padding-bottom:1%;
 }
 
+.standard-para{
+  text-indent:6%;
+  text-align:justify;
+  margin-top:2%;
+}
+
 .infobar-hr{
   height:1px;
   border:solid 0px;
@@ -69,4 +75,16 @@ a:hover.infobar-link-text {
   background:#cfd8dc;
   margin-top:15px;
   background-image: linear-gradient(to right, #cfd8dc, #8e9dba , #cfd8dc);
+}
+
+a:visited.standard-link{
+  color:#607d8b;
+}
+
+a:link.standard-link{
+  color:#607d8b;
+}
+
+a:hover.standard-link{
+  color:#d84315;
 }

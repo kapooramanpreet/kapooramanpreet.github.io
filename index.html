@@ -23,65 +23,41 @@ Libraries Used: jQuery, Materialize, Academicons, Font Awesome
     <!-- Stylesheet for my Academic icons -->
     <link rel="stylesheet" href="styles/academicons.min.css"/>
 
-    <!-- Script to include Font awesome  -->
-    <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
-
-    <!-- Script to ensure jQuery CDN is safe. 2.2.4 is required for responsivity of Materialize menu-->
-    <script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous">
-    </script>
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-
     <!-- CDNs for including Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- jQuery to include header and footer -->
-    <script>
-      $(function(){
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-        $("#infobar").load("infobar.html");
-      });
-    </script>
   </head>
 
   <body>
     <div id="header"></div>
 
-    <div class="container" style="margin-top:2.5%;">
+    <div class="container" style="margin-top:2%;">
       <div class="row">
         <div class="col s6 offset-s1">
           <div class="section">
             <h5>Computing Education Researcher & Educator</h5>
-              <div style="text-indent:50px;text-align:justify;margin-top:5%;">
+              <div class="standard-para" style="margin-top:5%;">
                 Amanpreet Kapoor is a Ph.D. student in the Human Centered Computing program
-                at the <a href="http://www.ufl.edu/" target="_blank">University of Florida</a>.
-                He is advised by Dr. Christina Gardner-McCune in the
-                <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/" target="_blank">Engaging Learning Lab</a>
-                and his research interests include Computer Science Education, Informal Learning Environments, Equitable
-                Computing and the Future of Work.
+                at the <a href="http://www.ufl.edu/" target="_blank" class="standard-link">University of Florida</a>.
+                He is advised by <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/christina-gardner-mccune/" target="_blank" class="standard-link">
+                Dr. Christina Gardner-McCune </a> in the <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/" target="_blank" class="standard-link">
+                Engaging Learning Lab</a> and his research interests include Computer Science Education, Informal Learning Environments,
+                and the Future of Work.
               </div>
-              <div style="text-indent:50px;text-align:justify;margin-top:2%;">
+              <div class="standard-para">
                 Aman's research focuses on understanding computing students' professional identity development in
                 formal, non-formal, and informal learning spaces. This research enables him to develop tools, curricula,
                 and instructional strategies that foster students' formation of computing identities and scaffold students’ learning
-                of computing. He is currently the Instructor of Programming Fundamentals 1 (COP3502) at the
-                University of Florida. Previously, he was the Instructor for Data Structures and Algorithms Online
-                (COP3530).
+                of computing equitably. He is currently the Instructor of Programming Fundamentals 1 (COP3502) at the
+                University of Florida. Previously, he was the
+                <a href="https://evaluations.ufl.edu/results/instructor.aspx?ik=1108561675" target="_blank" class="standard-link">Instructor</a> for Data
+                Structures and Algorithms Online (COP3530).
             </div>
           </div>
           <hr class="main-hr">
           <div class="section">
-            <h5>Section 2</h5>
+            <h5>Section</h5>
             <p>Add content<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
           </div>
           <hr class="main-hr">
@@ -95,5 +71,44 @@ Libraries Used: jQuery, Materialize, Academicons, Font Awesome
 
     <div id="footer"></div>
   </body>
+
+  <!-- Script to include Font awesome  -->
+  <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
+
+  <!-- Script to ensure jQuery CDN is safe. 2.2.4 is required for responsivity of Materialize menu-->
+  <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous">
+  </script>
+
+  <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+  </script>
+
+  <!-- CDNs for including Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- jQuery to include header and footer -->
+  <script>
+    $(function(){
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+      $("#infobar").load("infobar.html");
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CQ84ET05LJ');
+  </script>
+
 
 </html>
