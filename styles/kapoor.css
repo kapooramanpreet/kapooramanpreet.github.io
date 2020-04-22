@@ -7,6 +7,7 @@
   margin-left:15%;
 }
 
+
 footer{
   position:fixed;
   left:0;
@@ -20,6 +21,13 @@ footer{
   text-indent:6%;
   text-align:justify;
   margin-top:2%;
+}
+
+.standard-para-li{
+  text-indent:-0.2%;
+  margin-left: 5%;
+  margin-top: -1%;
+  list-style-type: disc;
 }
 
 .infobar-hr{
