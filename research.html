@@ -2,10 +2,10 @@
 <html>
 
   <head>
-    <title>Amanpreet Kapoor</title>
+    <title>Amanpreet Kapoor - Research</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Personal Website">
-    <meta name="keywords" content="Amanpreet Kapoor, CS Education">
+    <meta name="description" content="Research">
+    <meta name="keywords" content="Amanpreet Kapoor, CS Education, Research">
     <meta name="author" content="Amanpreet Kapoor">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,50 +15,111 @@
     <!-- Stylesheet for my Academic icons -->
     <link rel="stylesheet" href="styles/academicons.min.css"/>
 
-    <!-- Script to include Font awesome  -->
-    <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
-
-    <!-- Script to ensure jQuery CDN is safe. 2.2.4 is required for responsivity of Materialize menu-->
-    <script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous">
-    </script>
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-
     <!-- CDNs for including Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="styles/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- jQuery to include header and footer -->
-    <script>
-      $(function(){
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-        $("#infobar").load("infobar.html");
-      });
-    </script>
   </head>
 
   <body>
     <div id="header"></div>
 
-    <div class="container" style="margin-top:2.5%">
-      <div class="row">
-        <div class="col s9">
-            Research
+    <div class="container" style="margin-top:2%;">
+      <div class="row flex">
+        <div class="col s6 offset-s1">
+
+            <h6 style="text-align:center; font-size:15px">
+              <a href="#publications" class="standard-link">[Publications]</a> &nbsp;
+              <a href="#projects" class="standard-link">[Projects]</a> &nbsp;
+              <a href="#students" class="standard-link">[Students]</a>
+            </h6>
+
+          <hr class="main-hr">
+
+          <!-- Publications  -->
+          <div class="section" id="publications">
+            <h5>Publications</h5>
+            <div class="standard-para" style="margin-top:5%;">
+              Unfinished.
+            </div>
+            <div class="standard-para">
+
+            </div>
+          </div>
+          <hr class="main-hr">
+
+          <!-- Projects  -->
+          <div class="section" id="projects">
+            <h5>Projects</h5>
+              <div class="standard-para" style="margin-top:5%;">
+                <ul class="browser-default standard-para-li">
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+          </div>
+          <hr class="main-hr">
+
+          <!-- Informal Mentoring  -->
+
+          <div class="section" id="students">
+            <h5>Students</h5>
+            <div class="standard-para" style="margin-top:5%;">
+            </div>
+          </div>
+          <hr class="main-hr">
+
+        <br/><br/><br/><br/><br/>
         </div>
+        <div class="col s1"></div>
+
         <div id="infobar"></div>
       </div>
     </div>
 
     <div id="footer"></div>
   </body>
+
+
+
+
+  <!-- Script to include Font awesome  -->
+  <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
+
+  <!-- Script to ensure jQuery CDN is safe. 2.2.4 is required for responsivity of Materialize menu-->
+  <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous">
+  </script>
+
+  <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+  </script>
+
+  <!-- CDNs for including Materialize -->
+  <script src="javascript/materialize.min.js"></script>
+
+  <!-- jQuery to include header and footer -->
+  <script>
+    $(function(){
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+      $("#infobar").load("infobar.html");
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CQ84ET05LJ');
+  </script>
+
 
 </html>
