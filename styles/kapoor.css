@@ -95,3 +95,15 @@ a:link.standard-link{
 a:hover.standard-link{
   color:#d84315;
 }
+
+a:visited.standard-link-research{
+  color:#455a64 ;
+}
+
+a:link.standard-link-research{
+  color:#455a64;
+}
+
+a:hover.standard-link-research{
+  color:#d84315;
+}
