@@ -237,6 +237,17 @@ Libraries Used: jQuery, Materialize, Academicons, Font Awesome
       $("#footer").load("footer.html");
       $("#infobar").load("infobar.html");
     });
+    
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
   </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
