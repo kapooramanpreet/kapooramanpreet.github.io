@@ -37,7 +37,7 @@ Libraries Used: jQuery, Materialize, Academicons, Font Awesome
            <a href="/" class="right header-name">Amanpreet Kapoor</a>
            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
            <ul id="nav-mobile" class="left hide-on-med-and-down header-navbar">
-             <li id="home_header"><a href="/">Home</a></li>
+             <li id="home_header" class="active"><a href="/">Home</a></li>
              <!-- <li id="teach_header"><a href="teaching.html">Teaching</a></li> -->
              <li id="research_header"><a href="research.html">Research</a></li>
              <!-- <li id="projects_header"><a href="projects.html">Projects</a></li>
@@ -51,7 +51,7 @@ Libraries Used: jQuery, Materialize, Academicons, Font Awesome
 
     <!-- Code for Navbar mobile version: Make sure to edit this as well-->
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="/">Home</a></li>
+      <li class="active"><a href="/" >Home</a></li>
       <!-- <li><a href="teaching.html">Teaching</a></li> -->
       <li><a href="research.html">Research</a></li>
       <!-- <li><a href="projects.html">Projects</a></li>
@@ -240,7 +240,7 @@ Libraries Used: jQuery, Materialize, Academicons, Font Awesome
     
       document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
+    var instances = M.Sidenav.init(elems);
   });
 
   // Or with jQuery

@@ -22,7 +22,37 @@
   </head>
 
   <body>
-    <div id="header"></div>
+    <!-- Code for Navbar -->
+    <div class="navbar">
+      <nav class="blue-grey darken-4">
+        <div class="nav-wrapper">
+          <a href="/" class="right header-name">Amanpreet Kapoor</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down header-navbar">
+            <li id="home_header"><a href="/">Home</a></li>
+            <!-- <li id="teach_header"><a href="teaching.html">Teaching</a></li> -->
+            <li id="research_header" class="active"><a href="research.html">Research</a></li>
+            <!-- <li id="projects_header"><a href="projects.html">Projects</a></li>
+            <li id="blog_header"><a href="blog.html">Blog</a></li>
+            <li id="resources_header"><a href="resources.html">Student Resources</a></li> -->
+            <li id="contact_header"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Code for Navbar mobile version: Make sure to edit this as well-->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="/">Home</a></li>
+      <!-- <li><a href="teaching.html">Teaching</a></li> -->
+      <li class="active"><a href="research.html">Research</a></li>
+      <!-- <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="resources.html">Student Resources</a></li> -->
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+
 
     <div class="container" style="margin-top:2%;">
       <div class="row flex">
@@ -43,6 +73,18 @@
               <h6><center><b>Referred Conference Papers</b></center></h6>
               <br>
               <ul class="browser-default standard-para-li">
+
+                <li>
+                  <a href="https://dl.acm.org/doi/10.1145/3564721.3565948" target="_blank" class="standard-link">
+                    Categorizing Research on Identity in Undergraduate Computing Education.
+                  </a>
+                  <br> Amanpreet Kapoor and Christina Gardner-McCune.<br>
+                    ACM Koli Calling 2022.
+                  <a href="documents\research\papers\Kapoor&Gardner-McCune_Identity_Koli22.pdf" target="_blank" class="standard-link-research"> [Paper] </a>
+                  <a href="documents\research\slides\Kapoor&Gardner-McCune_Koli2022_Slides.pdf" target="_blank" class="standard-link-research"> [Slides] </a>				  
+				        </li>
+
+                <br>
 
                 <li>
                   <a href="https://dl.acm.org/doi/10.1145/3502717.3532159" target="_blank" class="standard-link">
@@ -77,7 +119,6 @@
                     ACM SIGCSE 2020.
                   <a href="documents\research\papers\Internships_Participation_SIGCSE20_Kapoor&Gardner-McCune.pdf" target="_blank" class="standard-link-research"> [Paper] </a>
                   <a href="documents\research\slides\Internships_Participation_SIGCSE20_Kapoor&Gardner-McCune_Slides.pdf" target="_blank" class="standard-link-research"> [Slides] </a>
-                  <a href="https://youtu.be/fXYRZ8ztNS8" target="_blank" class="standard-link-research"> [Video] </a>
                 </li>
                 <br>
                 <li>
@@ -282,12 +323,27 @@
 
   <!-- jQuery to include header and footer -->
   <script>
+
+
     $(function(){
       $("#header").load("header.html");
       $("#footer").load("footer.html");
       $("#infobar").load("infobar.html");
     });
+    
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
   </script>
+
+  
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
