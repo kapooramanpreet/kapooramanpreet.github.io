@@ -2,10 +2,10 @@
 <html>
 
   <head>
-    <title>Amanpreet Kapoor</title>
+    <title>Amanpreet Kapoor - Teaching</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Personal Website">
-    <meta name="keywords" content="Amanpreet Kapoor, CS Education">
+    <meta name="description" content="Teaching">
+    <meta name="keywords" content="Amanpreet Kapoor, CS Education, Teaching">
     <meta name="author" content="Amanpreet Kapoor">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,50 +15,115 @@
     <!-- Stylesheet for my Academic icons -->
     <link rel="stylesheet" href="styles/academicons.min.css"/>
 
-    <!-- Script to include Font awesome  -->
-    <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
+    <!-- Script to include Font awesome -->
+    <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous" defer></script>
 
-    <!-- Script to ensure jQuery CDN is safe. 2.2.4 is required for responsivity of Materialize menu-->
-    <script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous">
-    </script>
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-
-    <!-- CDNs for including Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- jQuery to include header and footer -->
-    <script>
-      $(function(){
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-        $("#infobar").load("infobar.html");
-      });
-    </script>
   </head>
 
   <body>
     <div id="header"></div>
 
-    <div class="container" style="margin-top:2.5%">
+    <div class="container" style="margin-top:2%;">
       <div class="row">
-        <div class="col s9">
-            Teaching
+        <div class="col s6 offset-s1">
+
+          <!-- Teaching Philosophy  -->
+          <div class="card">
+            <div class="card-title">Teaching Philosophy</div>
+            <div class="card-content">
+              <p>My teaching philosophy centers on creating inclusive learning environments that foster critical thinking and practical skill development. I believe in bridging the gap between theory and practice by incorporating real-world applications and industry-relevant projects into coursework.</p>
+              
+              <p>I emphasize active learning through collaborative projects, hands-on coding experiences, and peer instruction. My goal is to develop not just technical competency, but also professional skills that prepare students for successful careers in computing.</p>
+            </div>
+          </div>
+
+          <!-- Current Courses -->
+          <div class="card">
+            <div class="card-title">Current Courses</div>
+            <div class="card-content">
+              <h6><strong>As Instructional Associate Professor</strong></h6>
+              <ul class="browser-default standard-para-li">
+                <li><strong>Data Structures and Algorithms (COP3530)</strong> - Fall-Summer-Spring 2025, Fall-Summer-Spring 2024, Fall-Summer-Spring 2023, Fall-Summer-Spring 2022, Fall-Summer-Spring 2021, Fall 2020</li>
+                <li><strong>Data Structures and Algorithms Online (COP3530)</strong> - Summer-Spring 2025, Summer-Spring 2024, Summer-Spring 2023, Summer 2022, Summer-Spring 2021</li>
+                <li><strong>Human Computer Interaction (CEN4721)</strong> - Spring 2021</li>
+                <li><strong>Programming Fundamentals 1 (COP3502)</strong> - Fall 2023, Fall 2020</li>
+                <li><strong>Programming Fundamentals 1 Online (COP3502)</strong> - Fall 2022, Spring 2022, Fall 2021, Fall 2020</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Teaching Experience -->
+          <div class="card">
+            <div class="card-title">Previous Teaching Roles</div>
+            <div class="card-content">
+              <h6><strong>University of Florida - Instructor on Record</strong></h6>
+              <ul class="browser-default standard-para-li">
+                <li>Data Structures and Algorithms, COP3530: Summer 2020</li>
+                <li>Programming Fundamentals 1, COP3502: Spring 2020</li>
+                <li>Data Structures and Algorithms Online, COP3530: Fall-Summer-Spring 2019, Fall 2018</li>
+              </ul>
+
+              <h6><strong>University of Florida - Teaching Assistant</strong></h6>
+              <ul class="browser-default standard-para-li">
+                <li>Data Structures and Algorithms, COP3530: Spring 2019, Fall 2018, Summer 2018, Spring 2018</li>
+                <li>Software Engineering, CEN3031: Fall 2017</li>
+              </ul>
+
+              <h6><strong>Jaypee University of Engineering and Technology - Teaching Assistant</strong></h6>
+              <ul class="browser-default standard-para-li">
+                <li>Web Technology Lab: Fall 2014</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Teaching Innovation -->
+          <div class="card">
+            <div class="card-title">Teaching Innovation & Methods</div>
+            <div class="card-content">
+              <ul class="browser-default standard-para-li">
+                <li><strong>Technical Interview Preparation:</strong> Integrated technical interview practice into Data Structures and Algorithms coursework to improve student employability</li>
+                <li><strong>Industry-Academia Bridge:</strong> Collaborate with industry professionals to provide real-world context to theoretical concepts</li>
+                <li><strong>Inclusive Pedagogy:</strong> Implement strategies to support diverse learners and foster computing identity formation</li>
+                <li><strong>Online Learning Innovation:</strong> Developed effective online delivery methods for programming and algorithms courses</li>
+                <li><strong>Active Learning:</strong> Use peer instruction, collaborative coding, and project-based learning to enhance engagement</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
+        <div class="col s1"></div>
         <div id="infobar"></div>
+        <div class="col s1"></div>
       </div>
     </div>
 
     <div id="footer"></div>
   </body>
+
+  <!-- Script to ensure jQuery CDN is safe -->
+  <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+  </script>
+
+  <!-- jQuery to include header and footer -->
+  <script>
+    $(function(){
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+      $("#infobar").load("infobar.html");
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CQ84ET05LJ');
+  </script>
 
 </html>
