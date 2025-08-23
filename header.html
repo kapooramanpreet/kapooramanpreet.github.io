@@ -3,11 +3,14 @@
   <nav class="blue-grey darken-4">
      <div class="nav-wrapper">
        <a href="index.html" class="right header-name">Amanpreet Kapoor</a>
-       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
        <ul id="nav-mobile" class="left hide-on-med-and-down header-navbar">
          <li id="home_header"><a href="index.html">Home</a></li>
+         <!-- <li id="teach_header"><a href="teaching.html">Teaching</a></li> -->
          <li id="research_header"><a href="research.html">Research</a></li>
-         <li id="teach_header"><a href="teaching.html">Teaching</a></li>
+         <!-- <li id="projects_header"><a href="projects.html">Projects</a></li>
+         <li id="blog_header"><a href="blog.html">Blog</a></li>
+         <li id="resources_header"><a href="resources.html">Student Resources</a></li> -->
          <li id="contact_header"><a href="contact.html">Contact</a></li>
        </ul>
      </div>
@@ -17,20 +20,20 @@
 <!-- Code for Navbar mobile version: Make sure to edit this as well-->
 <ul class="sidenav" id="mobile-demo">
   <li><a href="index.html">Home</a></li>
+  <!-- <li><a href="teaching.html">Teaching</a></li> -->
   <li><a href="research.html">Research</a></li>
-  <li><a href="teaching.html">Teaching</a></li>
+  <!-- <li><a href="projects.html">Projects</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <li><a href="resources.html">Student Resources</a></li> -->
   <li><a href="contact.html">Contact</a></li>
 </ul>
 
 
 <script type="text/javascript">
 
-    // Code for making navbar responsive - custom implementation without Materialize
+    // Code for making navbar responsive
     $(document).ready(function(){
-      $('.sidenav-trigger').click(function(e) {
-        e.preventDefault();
-        $('#mobile-demo').toggle();
-      });
+      $('.sidenav').sidenav();
     });
 
     // Code for changing active tabs
@@ -39,9 +42,11 @@
             $("#home_header").removeClass('active');
             $("#teach_header").removeClass('active');
             $("#research_header").removeClass('active');
+            $("#projects_header").removeClass('active');
+            $("#blog_header").removeClass('active');
+            $("#resources_header").removeClass('active');
             $("#contact_header").removeClass('active');
         case '/':
-        case '/index.html':
             $('#home_header').addClass('active');
             break;
         case '/teaching.html':
@@ -50,9 +55,29 @@
         case '/research.html':
             $('#research_header').addClass('active');
             break;
+        case '/projects.html':
+            $('#projects_header').addClass('active');
+            break;
+        case '/blog.html':
+            $('#blog_header').addClass('active');
+            break;
+        case '/resources.html':
+            $('#resources_header').addClass('active');
+            break;
         case '/contact.html':
             $('#contact_header').addClass('active');
             break;
     }
+
+    /* Another way
+    function home(){ <li id="home_header" class="active" onclick="home(); return false;"><a href="/">Home</a></li>
+        $("#home_header").addClass('active');
+        $("#teach_header").removeClass('active');
+        $("#research_header").removeClass('active');
+        $("#projects_header").removeClass('active');
+        $("#blog_header").removeClass('active');
+        $("#resources_header").removeClass('active');
+    }
+    */
 
 </script>
