@@ -183,24 +183,18 @@ Libraries Used: jQuery, Academicons, Font Awesome
       crossorigin="anonymous">
   </script>
 
-  <!-- jQuery to include header and footer -->
+  <!-- Main JavaScript functionality -->
+  <script src="scripts/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
   <script>
-    $(function(){
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
-      $("#infobar").load("infobar.html");
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CQ84ET05LJ');
   </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-CQ84ET05LJ');
-    </script>
     <!-- Start of Async Drift Code -->
   <!-- <script>
   "use strict";
