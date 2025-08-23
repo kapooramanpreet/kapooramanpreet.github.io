@@ -130,8 +130,24 @@
   </script>
 
 
-  <!-- Main JavaScript functionality -->
-  <script src="scripts/main.js"></script>
+  <!-- jQuery to include header and footer -->
+  <script>
+    $(function(){
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+      $("#infobar").load("infobar.html");
+    });
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
