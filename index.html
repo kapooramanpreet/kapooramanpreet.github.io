@@ -1,290 +1,297 @@
-<!--
-Author: Amanpreet Kapoor
-Current Version: 0.1
-First Edit: March 28, 2020
-Last Edit: May 7, 2020
-Libraries Used: jQuery, Materialize, Academicons, Font Awesome
--->
-
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <title>Amanpreet Kapoor</title>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanpreet Kapoor</title>
     <meta name="description" content="Personal Website">
     <meta name="keywords" content="Amanpreet Kapoor, CS Education">
     <meta name="author" content="Amanpreet Kapoor">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="jW4mhGHslixztRjoS-ySmJR3AYEIyUhKBpjv59StSoI" />
-
-    <!-- Stylesheet for my website -->
-    <link rel="stylesheet" href="styles/kapoor.css">
-
-    <!-- Stylesheet for my Academic icons -->
-    <link rel="stylesheet" href="styles/academicons.min.css"/>
-
-    <!-- CDNs for including Materialize -->
-    <link rel="stylesheet" href="styles/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  </head>
-
-  <body>
-    <div class="navbar">
-      <nav class="blue-grey darken-4">
-         <div class="nav-wrapper">
-           <a href="index.html" class="right header-name">Amanpreet Kapoor</a>
-           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-           <ul id="nav-mobile" class="left hide-on-med-and-down header-navbar">
-             <li id="home_header" class="active"><a href="index.html">Home</a></li>
-             <!-- <li id="teach_header"><a href="teaching.html">Teaching</a></li> -->
-             <li id="research_header"><a href="research.html">Research</a></li>
-             <!-- <li id="projects_header"><a href="projects.html">Projects</a></li>
-             <li id="blog_header"><a href="blog.html">Blog</a></li>
-             <li id="resources_header"><a href="resources.html">Student Resources</a></li> -->
-             <li id="contact_header"><a href="contact.html">Contact</a></li>
-           </ul>
-         </div>
-       </nav>
-    </div>
-
-    <!-- Code for Navbar mobile version: Make sure to edit this as well-->
-    <ul class="sidenav" id="mobile-demo">
-      <li class="active"><a href="/" >Home</a></li>
-      <!-- <li><a href="teaching.html">Teaching</a></li> -->
-      <li><a href="research.html">Research</a></li>
-      <!-- <li><a href="projects.html">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="resources.html">Student Resources</a></li> -->
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <div class="container" style="margin-top:2%;">
-      <div class="row">
-        <div class="col s6 offset-s1">
-
-          <!-- Bio  -->
-
-          <div class="section">
-            <h5>Computing Education Researcher & Educator</h5>
-              <div class="standard-para" style="margin-top:5%;">
-                I am an Instructional Assistant Professor of Computer Science at the <a href="https://www.eng.ufl.edu/eed/" target="_blank" class="standard-link">
-                Department of Engineering Education</a> and an Affiliate Instructional Assistant Professor in the Computer and Information Science and Engineering Department, Herbert Wertheim College of Engineering, <a href="http://www.ufl.edu/" target="_blank" class="standard-link">University of Florida</a>.
-                I teach Data Structures & Algorithms, Human-Computer Interaction (HCI) and CS1 courses.
-              </div>
-              <div class="standard-para">
-                I completed my Ph.D. at the <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/" target="_blank" class="standard-link">
-                Engaging Learning Lab </a> where I worked with <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/christina-gardner-mccune/" target="_blank" class="standard-link">
-                Dr. Christina Gardner-McCune </a> on projects that aimed to foster students' formation of <i>computing identities</i> and improving the <i>employability</i> of computing graduates.
-              </div>
-          </div>
-          <hr class="main-hr">
-
-          <!-- Research Statement  -->
-
-          <div class="section">
-            <h5>Research Statement</h5>
-            <div class="standard-para" style="margin-top:5%;">
-              My research interests include Computing Education, Informal Learning Environments, Employability, Agency and Identity Formation.
-              Currently, my work focuses on understanding agency formation in
-              formal, non-formal, and informal learning spaces. I direct the <a href="https://www.grasshopperlab.space/" target="_blank" class="standard-link">
-              Grasshopper Lab</a> at the University of Florida.
-            </div>
-            <div class="standard-para">
-              The <b>broader goal</b> of my research is to improve computing students' <i>employability</i> by
-              (1) reducing the gap between industry and academia;
-              (2) fostering the development of computing students' agency for participation in self-directed learning; and
-              (3) understanding computing students' information-seeking behaviors;
-              <!-- (4) facilitating social learning by connecting micro-experts;
-              (5) improving students' professional skills; and
-              (6) increasing students' productivity. -->
-            </div>
-          </div>
-          <hr class="main-hr">
-
-          <!-- Teaching  -->
-
-          <div class="section">
-            <h5>Teaching</h5>
-            <div class="standard-para" style="margin-top:5%;">
-              <a href="http://www.ufl.edu/" target="_blank" class="standard-link">University of Florida</a> (Instructional Assistant Professor)
-            </div>
-            <div class="standard-para">
-              <ul class="browser-default standard-para-li">
-                <li>Data Structures and Algorithms, COP3530: Fall-Summer-Spring 2025, Fall-Summer-Spring 2024, Fall-Summer-Spring 2023, Fall-Summer-Spring 2022, Fall-Summer-Spring 2021, Fall 2020</li>
-                <li>Data Structures and Algorithms Online, COP3530: Summer-Spring 2025, Summer-Spring 2024, Summer-Spring 2023, Summer 2022, Summer-Spring 2021</li>
-                <li>Human Computer Interaction, CEN4721: Spring 2021</li>
-                <li>Programming Fundamentals 1, COP3502: Fall 2023, Fall 2020</li>
-                <li>Programming Fundamentals 1 Online, COP3502: Fall 2022, Spring 2022, Fall 2021, Fall 2020</li>
-              </ul>
-            </div>
-            <div class="standard-para" style="margin-top:5%;">
-              <a href="http://www.ufl.edu/" target="_blank" class="standard-link">University of Florida</a> (Instructor on Record)
-            </div>
-            <div class="standard-para">
-              <ul class="browser-default standard-para-li">
-                <li>Data Structures and Algorithms, COP3530: Summer 2020</li>
-                <li>Programming Fundamentals 1, COP3502: Spring 2020</li>
-                <li>Data Structures and Algorithms Online, COP3530: Fall-Summer-Spring 2019, Fall 2018</li>
-              </ul>
-            </div>
-            <div class="standard-para" style="margin-top:5%;">
-              <a href="http://www.ufl.edu/" target="_blank" class="standard-link">University of Florida</a> (Teaching Assistant)
-            </div>
-            <div class="standard-para">
-              <ul class="browser-default standard-para-li">
-                <li>Data Structures and Algorithms, COP3530: Spring 2019, Fall 2018, Summer 2018, Spring 2018</li>
-                <li>Software Engineering, CEN3031 : Fall 2017</li>
-              </ul>
-            </div>
-            <div class="standard-para" style="margin-top:5%;">
-              <a href="https://www.juet.ac.in/" target="_blank" class="standard-link">Jaypee University of Engineering and Technology</a> (Teaching Assistant)
-            </div>
-            <div class="standard-para">
-              <ul class="browser-default standard-para-li">
-                <li>Web Technology Lab: Fall 2014</li>
-              </ul>
-            </div>
-          </div>
-          <hr class="main-hr">
-          <!-- <div class="section">
-            <h5>Students</h5>
-            <div class="standard-para" style="margin-top:5%;">
-              List of Students
-            </div>
-          </div>
-          <hr class="main-hr"> -->
-        </div>
-        <div class="col s1"></div>
-
-        <div class="col s3 blue-grey-text text-darken-4 infobar-div" style="margin-top:3%;">
-          <img
-            src="images/kapoor.png"
-            alt="Amanpreet Kapoor"
-            id="image-headshot"
-            style="width:50%; border:solid 1px #90a4ae; margin-top:5%"/>
-          <br/>Amanpreet Kapoor<br/>
-          Instructional Assistant Professor<br/>
-          <a href="https://www.ufl.edu/" target="_blank" class="infobar-link-text">
-            University of Florida <br/>
-          </a>
-
-          <!-- Icons Code Here -->
-          <div class="infobar-div-icons">
-            <a href="https://dblp.uni-trier.de/pers/hd/k/Kapoor:Amanpreet" target="_blank" class="infobar-link" title="DBLP">
-              <i class="ai ai-dblp ai-2x infobar-icons"></i>
-            </a>
-            <a href="https://scholar.google.com/citations?user=dKUH-tcAAAAJ&hl=en" target="_blank" class="infobar-link" title="Google Scholar">
-              <i class="ai ai-google-scholar-square ai-2x infobar-icons"></i>
-            </a>
-            <a href="https://dl.acm.org/profile/99659244557" target="_blank" class="infobar-link" title="ACM Digital Library">
-              <i class="ai ai-acmdl ai-2x infobar-icons"></i>
-            </a>
-            <a href="https://www.researchgate.net/profile/Amanpreet_Kapoor" target="_blank" class="infobar-link" title="Research Gate">
-              <i class="ai ai-researchgate ai-2x infobar-icons"></i>
-            </a>
-            <a href="https://twitter.com/kapo_or" target="_blank" class="infobar-link" title="Twitter">
-              <i class="fab fa-twitter fa-2x infobar-icons"></i>
-            </a>
-            <br>
-          </div>
-          <a href="documents/personal/AmanpreetKapoor_CV.pdf" target="_blank" class="infobar-link-text" style="font-size:80%;">
-			Curriculum Vitae
-		  </a>
-
-
-          <hr class="infobar-hr">
-
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-
-        </div>
-        <div class="col s1"></div>
-
-      </div>
-    </div>
-
-    <div id="footer"></div>
-  </body>
-
-  <!-- Script to include Font awesome  -->
-  <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
-
-  <!-- Script to ensure jQuery CDN is safe. 2.2.4 is required for responsivity of Materialize menu-->
-  <script
-      src="https://code.jquery.com/jquery-2.2.4.min.js"
-      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous">
-  </script>
-
-  <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous">
-  </script>
-
-  <!-- CDNs for including Materialize -->
-  <script src="javascript/materialize.min.js"></script>
-
-  <!-- jQuery to include header and footer -->
-  <script>
-    $(function(){
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
-      $("#infobar").load("infobar.html");
-    });
     
-      document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  });
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
+    
+    <!-- Academic Icons -->
+    <link rel="stylesheet" href="styles/academicons.min.css"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .hover-lift { transition: transform 0.2s ease-in-out; }
+        .hover-lift:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
+                        Amanpreet Kapoor
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="bg-blue-100 text-blue-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="research.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Research</a>
+                        <a href="contact.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="index.html" class="bg-blue-100 text-blue-700 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="research.html" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Research</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  // Or with jQuery
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content Column -->
+            <div class="lg:col-span-2">
+                <!-- Bio Section -->
+                <div class="bg-white rounded-xl card-shadow p-8 mb-8 hover-lift">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Computing Education Researcher & Educator</h2>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p class="text-justify">
+                            I am an Instructional Assistant Professor of Computer Science at the 
+                            <a href="https://www.eng.ufl.edu/eed/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                Department of Engineering Education
+                            </a> and an Affiliate Instructional Assistant Professor in the Computer and Information Science and Engineering Department, Herbert Wertheim College of Engineering, 
+                            <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                University of Florida
+                            </a>.
+                            I teach Data Structures & Algorithms, Human-Computer Interaction (HCI) and CS1 courses.
+                        </p>
+                        <p class="text-justify">
+                            I completed my Ph.D. at the 
+                            <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                Engaging Learning Lab
+                            </a> where I worked with 
+                            <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/christina-gardner-mccune/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                Dr. Christina Gardner-McCune
+                            </a> on projects that aimed to foster students' formation of <em>computing identities</em> and improving the <em>employability</em> of computing graduates.
+                        </p>
+                    </div>
+                </div>
 
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-  </script>
+                <!-- Research Statement -->
+                <div class="bg-white rounded-xl card-shadow p-8 mb-8 hover-lift">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Research Statement</h2>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p class="text-justify">
+                            My research interests include Computing Education, Informal Learning Environments, Employability, Agency and Identity Formation.
+                            Currently, my work focuses on understanding agency formation in formal, non-formal, and informal learning spaces. I direct the 
+                            <a href="https://www.grasshopperlab.space/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                Grasshopper Lab
+                            </a> at the University of Florida.
+                        </p>
+                        <p class="text-justify">
+                            The <strong>broader goal</strong> of my research is to improve computing students' <em>employability</em> by
+                            (1) reducing the gap between industry and academia;
+                            (2) fostering the development of computing students' agency for participation in self-directed learning; and
+                            (3) understanding computing students' information-seeking behaviors.
+                        </p>
+                    </div>
+                </div>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+                <!-- Teaching Section -->
+                <div class="bg-white rounded-xl card-shadow p-8 hover-lift">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Teaching</h2>
+                    <div class="space-y-6">
+                        <!-- University of Florida - Instructional Assistant Professor -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                    University of Florida
+                                </a> (Instructional Assistant Professor)
+                            </h3>
+                            <ul class="space-y-2 text-gray-700 ml-4">
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Data Structures and Algorithms, COP3530: Fall-Summer-Spring 2025, Fall-Summer-Spring 2024, Fall-Summer-Spring 2023, Fall-Summer-Spring 2022, Fall-Summer-Spring 2021, Fall 2020</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Data Structures and Algorithms Online, COP3530: Summer-Spring 2025, Summer-Spring 2024, Summer-Spring 2023, Summer 2022, Summer-Spring 2021</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Human Computer Interaction, CEN4721: Spring 2021</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Programming Fundamentals 1, COP3502: Fall 2023, Fall 2020</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Programming Fundamentals 1 Online, COP3502: Fall 2022, Spring 2022, Fall 2021, Fall 2020</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- University of Florida - Instructor on Record -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                    University of Florida
+                                </a> (Instructor on Record)
+                            </h3>
+                            <ul class="space-y-2 text-gray-700 ml-4">
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Data Structures and Algorithms, COP3530: Summer 2020</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Programming Fundamentals 1, COP3502: Spring 2020</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Data Structures and Algorithms Online, COP3530: Fall-Summer-Spring 2019, Fall 2018</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- University of Florida - Teaching Assistant -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                    University of Florida
+                                </a> (Teaching Assistant)
+                            </h3>
+                            <ul class="space-y-2 text-gray-700 ml-4">
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Data Structures and Algorithms, COP3530: Spring 2019, Fall 2018, Summer 2018, Spring 2018</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Software Engineering, CEN3031: Fall 2017</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Jaypee University -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                <a href="https://www.juet.ac.in/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
+                                    Jaypee University of Engineering and Technology
+                                </a> (Teaching Assistant)
+                            </h3>
+                            <ul class="space-y-2 text-gray-700 ml-4">
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Web Technology Lab: Fall 2014</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl card-shadow p-6 sticky top-24">
+                    <!-- Profile Image -->
+                    <div class="text-center mb-6">
+                        <img src="images/kapoor.png" alt="Amanpreet Kapoor" 
+                             class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-200 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900">Amanpreet Kapoor</h3>
+                        <p class="text-gray-600 mt-1">Instructional Assistant Professor</p>
+                        <p class="text-blue-600 font-medium">
+                            <a href="https://www.ufl.edu/" target="_blank" class="hover:text-blue-800">
+                                University of Florida
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex justify-center space-x-3 mb-6">
+                        <a href="https://dblp.uni-trier.de/pers/hd/k/Kapoor:Amanpreet" target="_blank" 
+                           class="text-gray-600 hover:text-blue-600 transition-colors" title="DBLP">
+                            <i class="ai ai-dblp ai-2x"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=dKUH-tcAAAAJ&hl=en" target="_blank" 
+                           class="text-gray-600 hover:text-blue-600 transition-colors" title="Google Scholar">
+                            <i class="ai ai-google-scholar-square ai-2x"></i>
+                        </a>
+                        <a href="https://dl.acm.org/profile/99659244557" target="_blank" 
+                           class="text-gray-600 hover:text-blue-600 transition-colors" title="ACM Digital Library">
+                            <i class="ai ai-acmdl ai-2x"></i>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Amanpreet_Kapoor" target="_blank" 
+                           class="text-gray-600 hover:text-blue-600 transition-colors" title="Research Gate">
+                            <i class="ai ai-researchgate ai-2x"></i>
+                        </a>
+                        <a href="https://twitter.com/kapo_or" target="_blank" 
+                           class="text-gray-600 hover:text-blue-600 transition-colors" title="Twitter">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                    </div>
+
+                    <!-- CV Link -->
+                    <div class="text-center">
+                        <a href="documents/personal/AmanpreetKapoor_CV.pdf" target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            <i class="fas fa-download mr-2"></i>
+                            Curriculum Vitae
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Amanpreet Kapoor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQ84ET05LJ"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-CQ84ET05LJ');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CQ84ET05LJ');
     </script>
-    <!-- Start of Async Drift Code -->
-  <!-- <script>
-  "use strict";
-
-  !function() {
-    var t = window.driftt = window.drift = window.driftt || [];
-    if (!t.init) {
-      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
-      t.factory = function(e) {
-        return function() {
-          var n = Array.prototype.slice.call(arguments);
-          return n.unshift(e), t.push(n), t;
-        };
-      }, t.methods.forEach(function(e) {
-        t[e] = t.factory(e);
-      }), t.load = function(t) {
-        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-        var i = document.getElementsByTagName("script")[0];
-        i.parentNode.insertBefore(o, i);
-      };
-    }
-  }();
-  drift.SNIPPET_VERSION = '0.3.1';
-  drift.load('sbndzess7ds2');
-  </script> -->
-<!-- End of Async Drift Code -->
-
+</body>
 </html>
