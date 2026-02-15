@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,51 +8,99 @@
     <meta name="keywords" content="Amanpreet Kapoor, CS Education">
     <meta name="author" content="Amanpreet Kapoor">
     <meta name="google-site-verification" content="jW4mhGHslixztRjoS-ySmJR3AYEIyUhKBpjv59StSoI" />
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
-    
+
     <!-- Academic Icons -->
     <link rel="stylesheet" href="styles/academicons.min.css"/>
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-        .hover-lift { transition: transform 0.2s ease-in-out; }
-        .hover-lift:hover { transform: translateY(-2px); }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .card-shadow:hover {
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #0021A5;
+            transition: width 0.3s ease, left 0.3s ease;
+            border-radius: 1px;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .gradient-text {
+            color: #0021A5;
+        }
+        .profile-ring {
+            background: #0021A5;
+            padding: 3px;
+            border-radius: 9999px;
+        }
+        .social-icon {
+            transition: all 0.2s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-2px);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+    <!-- Top accent line -->
+    <div class="h-1 bg-[#0021A5]"></div>
+
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Name -->
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-blue-800 transition-colors">
+                    <a href="index.html" class="text-xl font-bold gradient-text hover:opacity-80 transition-opacity">
                         Amanpreet Kapoor
                     </a>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="bg-blue-100 text-blue-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="research.html" class="text-gray-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Research</a>
-                        <a href="contact.html" class="text-gray-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    <div class="ml-10 flex items-baseline space-x-1">
+                        <a href="index.html" class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-medium">Home</a>
+                        <a href="research.html" class="nav-link text-gray-600 hover:text-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Research</a>
+                        <a href="contact.html" class="nav-link text-gray-600 hover:text-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
                     </div>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-800 focus:outline-none focus:text-blue-800">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-700 focus:outline-none p-2 rounded-lg hover:bg-gray-100 transition-colors">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -60,48 +108,48 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-                <a href="index.html" class="bg-blue-100 text-blue-700 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="research.html" class="text-gray-600 hover:text-blue-800 block px-3 py-2 rounded-md text-base font-medium">Research</a>
-                <a href="contact.html" class="text-gray-600 hover:text-blue-800 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-100">
+                <a href="index.html" class="bg-blue-50 text-blue-700 block px-3 py-2 rounded-lg text-base font-medium">Home</a>
+                <a href="research.html" class="text-gray-600 hover:text-blue-700 hover:bg-gray-50 block px-3 py-2 rounded-lg text-base font-medium transition-colors">Research</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-700 hover:bg-gray-50 block px-3 py-2 rounded-lg text-base font-medium transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="flex flex-col lg:grid lg:grid-cols-3 gap-8">
             <!-- Main Content Column -->
             <div class="lg:col-span-2 order-2 lg:order-1">
                 <!-- Bio Section -->
-                <div class="bg-white rounded-xl card-shadow p-8 mb-8 hover-lift">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Computing Education Researcher & Educator</h2>
+                <div class="bg-white rounded-2xl card-shadow p-8 mb-8 border border-gray-100 animate-in animate-delay-1">
+                    <h2 class="text-2xl font-bold gradient-text mb-6">Computing Education Researcher & Educator</h2>
                     <div class="space-y-4 text-gray-700 leading-relaxed">
                         <p class="text-justify">
-                            I am an Instructional Associate Professor of Computer Science at the 
-                            <a href="https://www.eng.ufl.edu/eed/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">Department of Engineering Education</a> and an Affiliate Instructional Associate Professor in the Computer and Information Science and Engineering Department, Herbert Wertheim College of Engineering,
-                            <a href="http://www.ufl.edu/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">University of Florida</a>.
+                            I am an Instructional Associate Professor of Computer Science at the
+                            <a href="https://www.eng.ufl.edu/eed/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">Department of Engineering Education</a> and an Affiliate Instructional Associate Professor in the Computer and Information Science and Engineering Department, Herbert Wertheim College of Engineering,
+                            <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">University of Florida</a>.
                             I teach Data Structures & Algorithms, Human-Computer Interaction (HCI) and CS1 courses.
                         </p>
                         <p class="text-justify">
-                            I completed my Ph.D. at the 
-                            <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">Engaging Learning Lab</a> where I worked with 
-                            <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/christina-gardner-mccune/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">Dr. Christina Gardner-McCune</a> on projects that aimed to foster students' formation of <em>computing identities</em> and improving the <em>employability</em> of computing graduates.
+                            I completed my Ph.D. at the
+                            <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">Engaging Learning Lab</a> where I worked with
+                            <a href="https://faculty.eng.ufl.edu/engaging-learning-lab/christina-gardner-mccune/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">Dr. Christina Gardner-McCune</a> on projects that aimed to foster students' formation of <em>computing identities</em> and improving the <em>employability</em> of computing graduates.
                         </p>
                     </div>
                 </div>
 
                 <!-- Research Statement -->
-                <div class="bg-white rounded-xl card-shadow p-8 mb-8 hover-lift">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Research Statement</h2>
+                <div class="bg-white rounded-2xl card-shadow p-8 mb-8 border border-gray-100 animate-in animate-delay-2">
+                    <h2 class="text-2xl font-bold gradient-text mb-6">Research Statement</h2>
                     <div class="space-y-4 text-gray-700 leading-relaxed">
                         <p class="text-justify">
                             My research interests include Computing Education, Informal Learning Environments, Employability, Agency and Identity Formation.
-                            Currently, my work focuses on understanding agency formation in formal, non-formal, and informal learning spaces. I direct the 
-                            <a href="https://www.grasshopperlab.space/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">Grasshopper Lab</a> at the University of Florida.
+                            Currently, my work focuses on understanding agency formation in formal, non-formal, and informal learning spaces. I direct the
+                            <a href="https://www.grasshopperlab.space/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">Grasshopper Lab</a> at the University of Florida.
                         </p>
                         <p class="text-justify">
                             The <strong>broader goal</strong> of my research is to improve computing students' <em>employability</em> by
@@ -113,13 +161,13 @@
                 </div>
 
                 <!-- Teaching Section -->
-                <div class="bg-white rounded-xl card-shadow p-8 hover-lift">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Teaching</h2>
+                <div class="bg-white rounded-2xl card-shadow p-8 border border-gray-100 animate-in animate-delay-3">
+                    <h2 class="text-2xl font-bold gradient-text mb-6">Teaching</h2>
                     <div class="space-y-6">
                         <!-- University of Florida - Instructional Assistant Professor -->
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                     University of Florida</a> (Instructional Assistant Professor)
                             </h3>
                             <ul class="space-y-2 text-gray-700 ml-4">
@@ -149,20 +197,20 @@
                         <!-- University of Florida - Instructor on Record -->
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                     University of Florida</a> (Instructor on Record)
                             </h3>
                             <ul class="space-y-2 text-gray-700 ml-4">
                                 <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                     <span>Data Structures and Algorithms, COP3530: Summer 2020</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                     <span>Programming Fundamentals 1, COP3502: Spring 2020</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                     <span>Data Structures and Algorithms Online, COP3530: Fall-Summer-Spring 2019, Fall 2018</span>
                                 </li>
                             </ul>
@@ -171,16 +219,16 @@
                         <!-- University of Florida - Teaching Assistant -->
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                <a href="http://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                     University of Florida</a> (Teaching Assistant)
                             </h3>
                             <ul class="space-y-2 text-gray-700 ml-4">
                                 <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                     <span>Data Structures and Algorithms, COP3530: Spring 2019, Fall 2018, Summer 2018, Spring 2018</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                     <span>Software Engineering, CEN3031: Fall 2017</span>
                                 </li>
                             </ul>
@@ -189,7 +237,7 @@
                         <!-- Jaypee University -->
                         <div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                <a href="https://www.juet.ac.in/" target="_blank" class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                <a href="https://www.juet.ac.in/" target="_blank" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                     Jaypee University of Engineering and Technology</a> (Teaching Assistant)
                             </h3>
                             <ul class="space-y-2 text-gray-700 ml-4">
@@ -205,58 +253,60 @@
 
             <!-- Sidebar -->
             <div class="lg:col-span-1 order-1 lg:order-2">
-                <div class="bg-white rounded-xl card-shadow p-6 sticky top-24">
+                <div class="bg-white rounded-2xl card-shadow p-6 sticky top-24 border border-gray-100 animate-in">
                     <!-- Profile Image -->
                     <div class="text-center mb-6">
-                        <img src="images/kapoor.png" alt="Amanpreet Kapoor" 
-                             class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-200 shadow-lg">
+                        <div class="profile-ring w-36 h-36 mx-auto mb-4">
+                            <img src="images/kapoor.png" alt="Amanpreet Kapoor"
+                                 class="w-full h-full rounded-full object-cover bg-white">
+                        </div>
                         <h3 class="text-xl font-bold text-gray-900">Amanpreet Kapoor</h3>
-                        <p class="text-gray-600 mt-1">Instructional Associate Professor</p>
-                        <p class="text-blue-800 font-medium">
-                            <a href="https://www.ufl.edu/" target="_blank" class="hover:text-blue-900">
+                        <p class="text-gray-500 mt-1 text-sm">Instructional Associate Professor</p>
+                        <p class="font-medium mt-0.5">
+                            <a href="https://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors">
                                 University of Florida
                             </a>
                         </p>
                     </div>
 
                     <!-- Social Links -->
-                    <div class="flex justify-center space-x-3 mb-6">
-                        <a href="https://dblp.uni-trier.de/pers/hd/k/Kapoor:Amanpreet" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="DBLP">
-                            <i class="ai ai-dblp ai-2x"></i>
+                    <div class="flex justify-center flex-wrap gap-2 mb-6">
+                        <a href="https://dblp.uni-trier.de/pers/hd/k/Kapoor:Amanpreet" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="DBLP">
+                            <i class="ai ai-dblp ai-lg"></i>
                         </a>
-                        <a href="https://scholar.google.com/citations?user=dKUH-tcAAAAJ&hl=en" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="Google Scholar">
-                            <i class="ai ai-google-scholar-square ai-2x"></i>
+                        <a href="https://scholar.google.com/citations?user=dKUH-tcAAAAJ&hl=en" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="Google Scholar">
+                            <i class="ai ai-google-scholar-square ai-lg"></i>
                         </a>
-                        <a href="https://dl.acm.org/profile/99659244557" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="ACM Digital Library">
-                            <i class="ai ai-acmdl ai-2x"></i>
+                        <a href="https://dl.acm.org/profile/99659244557" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="ACM Digital Library">
+                            <i class="ai ai-acmdl ai-lg"></i>
                         </a>
-                        <a href="https://www.researchgate.net/profile/Amanpreet_Kapoor" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="Research Gate">
-                            <i class="ai ai-researchgate ai-2x"></i>
+                        <a href="https://www.researchgate.net/profile/Amanpreet_Kapoor" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="Research Gate">
+                            <i class="ai ai-researchgate ai-lg"></i>
                         </a>
-                        <a href="https://twitter.com/kapo_or" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="Twitter">
-                            <i class="fab fa-twitter fa-2x"></i>
+                        <a href="https://twitter.com/kapo_or" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="Twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
                         </a>
-                        <a href="https://github.com/kapooramanpreet" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="GitHub">
-                            <i class="fab fa-github fa-2x"></i>
+                        <a href="https://github.com/kapooramanpreet" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="GitHub">
+                            <i class="fab fa-github fa-lg"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/kapooramanpreet/" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="LinkedIn">
-                            <i class="fab fa-linkedin fa-2x"></i>
+                        <a href="https://www.linkedin.com/in/kapooramanpreet/" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="LinkedIn">
+                            <i class="fab fa-linkedin fa-lg"></i>
                         </a>
                     </div>
 
                     <!-- CV Link -->
                     <div class="text-center">
-                        <a href="documents/personal/Amanpreet_Kapoor_CV.pdf" target="_blank" 
-                           class="inline-flex items-center px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium">
+                        <a href="documents/personal/Amanpreet_Kapoor_CV.pdf" target="_blank"
+                           class="inline-flex items-center px-5 py-2.5 bg-[#0021A5] text-white rounded-lg hover:bg-[#001a84] transition-all font-medium shadow-md hover:shadow-lg">
                             <i class="fas fa-download mr-2"></i>
-                            CV
+                            Download CV
                         </a>
                     </div>
                 </div>
@@ -265,9 +315,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Amanpreet Kapoor. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 Amanpreet Kapoor. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

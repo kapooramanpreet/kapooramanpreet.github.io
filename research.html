@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +7,104 @@
     <meta name="description" content="Research">
     <meta name="keywords" content="Amanpreet Kapoor, CS Education, Research">
     <meta name="author" content="Amanpreet Kapoor">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/827424b237.js" crossorigin="anonymous"></script>
-    
+
     <!-- Academic Icons -->
     <link rel="stylesheet" href="styles/academicons.min.css"/>
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-        .hover-lift { transition: transform 0.2s ease-in-out; }
-        .hover-lift:hover { transform: translateY(-2px); }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .card-shadow:hover {
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #0021A5;
+            transition: width 0.3s ease, left 0.3s ease;
+            border-radius: 1px;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .gradient-text {
+            color: #0021A5;
+        }
+        .profile-ring {
+            background: #0021A5;
+            padding: 3px;
+            border-radius: 9999px;
+        }
+        .social-icon {
+            transition: all 0.2s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-2px);
+        }
+        .pub-item {
+            transition: all 0.2s ease;
+        }
+        .pub-item:hover {
+            transform: translateX(4px);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+    <!-- Top accent line -->
+    <div class="h-1 bg-[#0021A5]"></div>
+
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Name -->
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-blue-800 transition-colors">
+                    <a href="index.html" class="text-xl font-bold gradient-text hover:opacity-80 transition-opacity">
                         Amanpreet Kapoor
                     </a>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-gray-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                        <a href="research.html" class="bg-blue-100 text-blue-700 px-3 py-2 rounded-md text-sm font-medium">Research</a>
-                        <a href="contact.html" class="text-gray-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    <div class="ml-10 flex items-baseline space-x-1">
+                        <a href="index.html" class="nav-link text-gray-600 hover:text-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Home</a>
+                        <a href="research.html" class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-medium">Research</a>
+                        <a href="contact.html" class="nav-link text-gray-600 hover:text-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
                     </div>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-800 focus:outline-none focus:text-blue-800">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-700 focus:outline-none p-2 rounded-lg hover:bg-gray-100 transition-colors">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -58,56 +112,59 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-                <a href="index.html" class="text-gray-600 hover:text-blue-800 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="research.html" class="bg-blue-100 text-blue-700 block px-3 py-2 rounded-md text-base font-medium">Research</a>
-                <a href="contact.html" class="text-gray-600 hover:text-blue-800 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-100">
+                <a href="index.html" class="text-gray-600 hover:text-blue-700 hover:bg-gray-50 block px-3 py-2 rounded-lg text-base font-medium transition-colors">Home</a>
+                <a href="research.html" class="bg-blue-50 text-blue-700 block px-3 py-2 rounded-lg text-base font-medium">Research</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-700 hover:bg-gray-50 block px-3 py-2 rounded-lg text-base font-medium transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Main Content Column -->
             <div class="lg:col-span-2">
                 <!-- Quick Navigation -->
-                <div class="bg-white rounded-xl card-shadow p-6 mb-8">
-                    <div class="flex flex-wrap justify-center gap-4 text-sm">
-                        <a href="#dissertation" class="bg-orange-100 text-orange-700 px-4 py-2 rounded-lg hover:bg-orange-200 transition-colors font-medium">Dissertation</a>
-                        <a href="#papers" class="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors font-medium">Papers</a>
-                        <a href="#posters" class="bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors font-medium">Posters</a>
-                        <a href="#demos" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors font-medium">Demos</a>
+                <div class="bg-white rounded-2xl card-shadow p-6 mb-8 border border-gray-100 animate-in">
+                    <div class="flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#dissertation" class="bg-amber-50 text-amber-700 px-4 py-2 rounded-lg hover:bg-amber-100 transition-all font-medium shadow-sm hover:shadow">Dissertation</a>
+                        <a href="#papers" class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg hover:bg-blue-100 transition-all font-medium shadow-sm hover:shadow">Papers</a>
+                        <a href="#posters" class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg hover:bg-emerald-100 transition-all font-medium shadow-sm hover:shadow">Posters</a>
+                        <a href="#demos" class="bg-orange-50 text-orange-700 px-4 py-2 rounded-lg hover:bg-orange-100 transition-all font-medium shadow-sm hover:shadow">Demos</a>
                     </div>
                 </div>
 
                 <!-- Publications Section -->
-                <div class="bg-white rounded-xl card-shadow p-8 mb-8">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-8">Publications</h1>
-                    
+                <div class="bg-white rounded-2xl card-shadow p-8 mb-8 border border-gray-100 animate-in animate-delay-1">
+                    <h1 class="text-3xl font-bold gradient-text mb-8">Publications</h1>
+
                     <!-- Dissertation -->
                     <div id="dissertation" class="mb-12">
-                        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 pb-4 border-b-2 border-orange-200">
+                        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 pb-4 border-b-2 border-amber-200">
                             Dissertation
                         </h2>
 
                         <div class="space-y-8">
-                            <div class="border-l-4 border-orange-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-amber-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    Computing Undergraduate Students' Participation in Internships: Experiences, Preparation, and Barriers
+                                    <a href="https://www.proquest.com/docview/3297299152?sourcetype=Dissertations%20&%20Theses" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
+                                        Computing Undergraduate Students' Participation in Internships: Experiences, Preparation, and Barriers
+                                    </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor.</p>
                                 <p class="text-gray-600 mb-3">University of Florida, 2025.</p>
                                 <div class="flex flex-wrap gap-2">
                                     <a href="documents/research/dissertation/Kapoor_2025_Dissertation_Internships.pdf"
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Dissertation
                                     </a>
                                     <a href="documents/research/slides/Kapoor_2025_Dissertation_Slides.pdf"
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
                                 </div>
@@ -120,13 +177,13 @@
                         <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 pb-4 border-b-2 border-blue-200">
                             Referred Conference Papers
                         </h2>
-                        
+
                         <div class="space-y-8">
 
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     <a href="https://doi.org/10.1145/3770762.3772542" target="_blank"
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Exploring Undergraduate Computing Tutors' Pedagogical Practices
                                     </a>
                                 </h3>
@@ -136,397 +193,378 @@
                                 </div>
                             </div>
 
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     <a href="https://doi.org/10.1145/3786228.3786233" target="_blank"
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Exploring Student Behaviors and Motivations when using AI Teaching Assistants with Optional Guardrails
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor, Paul Denny, Leo Porter, Stephen Macneil, Marc Diaz.</p>
                                 <p class="text-gray-600 mb-3">ACM ACE 2026.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Exploring_AI_TA_Optional_Guardrails_ACE26_Kapoor_etal.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Exploring_AI_TA_Optional_Guardrails_ACE26_Kapoor_etal.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Exploring_AI_TA_Optional_Guardrails_ACE26_Kapoor_etal_slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Exploring_AI_TA_Optional_Guardrails_ACE26_Kapoor_etal_slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
                                 </div>
                             </div>
 
-
-                            <!-- Paper 1 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3724363.3729102" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3724363.3729102" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Retrospective Evaluation of Technical Interview Preparation Activities offered in a Data Structures and Algorithms Course
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM ITiCSE 2025.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Retrospective_Interviews_ITiCSE2025_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Retrospective_Interviews_ITiCSE2025_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Kapoor&Gardner-McCune_ITiCSE2025_RetrospectiveTI_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Kapoor&Gardner-McCune_ITiCSE2025_RetrospectiveTI_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 2 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3641554.3701850" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3641554.3701850" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         NeuRL: A Standalone No-Code Web-Based Agent Environment to Explore Neural Networks and Reinforcement Learning
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Scott Siegel, Amanpreet Kapoor, and Parisa Rashidi</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2025.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/NeuRL_SIGCSE2025_Siegel_etal.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/NeuRL_SIGCSE2025_Siegel_etal.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 3 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3598579.3689378" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3598579.3689378" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Where's the Data? Finding and Reusing Datasets in Computing Education
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Natalie Kiesler, John Impagliazzo, Katarzyna Biernacka, Amanpreet Kapoor, Zain Kazmi, Sujeeth Goud Ramagoni, Aamod Sane, Keith Tran, Shubbhi Taneja, and Zihan Wu.</p>
                                 <p class="text-gray-600 mb-3">ACM CompEd 2023.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/WhereData_Comped2023_Kiesler_etal.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/WhereData_Comped2023_Kiesler_etal.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 4 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://peer.asee.org/43292" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://peer.asee.org/43292" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Computing students' design preferences and barriers when solving short programming problems
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Joseph Paul Hardin, Marc Diaz, and Amanpreet Kapoor.</p>
                                 <p class="text-gray-600 mb-3">ASEE 2023.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Coding_design_preferences_ASEE2023_Hardin_etal.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Coding_design_preferences_ASEE2023_Hardin_etal.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 5 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3545945.3569756" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3545945.3569756" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Logistics, Affordances, and Evaluation of Build Programming: A Code Reading Instructional Strategy
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor, Tianwei Xie, Leon Kwan, and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2023.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Kapoor_et_al_SIGCSE2023_Build_Programming_Paper.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Kapoor_et_al_SIGCSE2023_Build_Programming_Paper.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Kapoor,Xie,Kwan&Gardner-McCune_SIGCSE2023_Build_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Kapoor,Xie,Kwan&Gardner-McCune_SIGCSE2023_Build_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
-                                    <a href="https://github.com/kapooramanpreet/Build-Programming" 
+                                    <a href="https://github.com/kapooramanpreet/Build-Programming"
                                        target="_blank" class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors">
                                         <i class="fab fa-github mr-1"></i> Source Code
                                     </a>
-                                    <a href="https://youtu.be/AchB01UZe2g" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm hover:bg-red-200 transition-colors">
+                                    <a href="https://youtu.be/AchB01UZe2g"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm hover:bg-red-100 transition-colors">
                                         <i class="fab fa-youtube mr-1"></i> Video
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 6 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3545945.3569754" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3545945.3569754" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Modeling Determinants of Undergraduate Computing Students' Participation in Internships
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Megan Wolf, Amanpreet Kapoor, Charlie Hobson, and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2023.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Wolf,Kapoor,Hobson&Gardner-McCune_SIGCSE2023_Internships_Paper.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Wolf,Kapoor,Hobson&Gardner-McCune_SIGCSE2023_Internships_Paper.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Wolf,Kapoor,Hobson&Gardner-McCune_SIGCSE2023_Internships_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Wolf,Kapoor,Hobson&Gardner-McCune_SIGCSE2023_Internships_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
-                                    <a href="https://github.com/kapooramanpreet/Modeling-Internships" 
+                                    <a href="https://github.com/kapooramanpreet/Modeling-Internships"
                                        target="_blank" class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors">
                                         <i class="fab fa-github mr-1"></i> Source Code
                                     </a>
-                                    <a href="https://www.youtube.com/watch?v=D60EQW9xtVQ" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm hover:bg-red-200 transition-colors">
+                                    <a href="https://www.youtube.com/watch?v=D60EQW9xtVQ"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm hover:bg-red-100 transition-colors">
                                         <i class="fab fa-youtube mr-1"></i> Video
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 7 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3545945.3569755" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3545945.3569755" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Implementation and Evaluation of Technical Interview Preparation Activities in a Data Structures and Algorithms Course
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor, Sajani Panchal, and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2023.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Kapoor,Panchal&Gardner-McCune_SIGCSE2023_HTG_Paper.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Kapoor,Panchal&Gardner-McCune_SIGCSE2023_HTG_Paper.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Kapoor,Panchal&Gardner-McCune_SIGCSE2023_HTG_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Kapoor,Panchal&Gardner-McCune_SIGCSE2023_HTG_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
-                                    <a href="https://github.com/kapooramanpreet/Technical-Interview-Exercises" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm hover:bg-purple-200 transition-colors">
+                                    <a href="https://github.com/kapooramanpreet/Technical-Interview-Exercises"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm hover:bg-orange-100 transition-colors">
                                         <i class="fas fa-tools mr-1"></i> Instructor Resources
                                     </a>
-                                    <a href="https://www.youtube.com/watch?v=SK29WIUumP8" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm hover:bg-red-200 transition-colors">
+                                    <a href="https://www.youtube.com/watch?v=SK29WIUumP8"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm hover:bg-red-100 transition-colors">
                                         <i class="fab fa-youtube mr-1"></i> Video
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Continue with more papers... I'll add a few more key ones -->
-                            <!-- Paper 8 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3564721.3565948" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3564721.3565948" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Categorizing Research on Identity in Undergraduate Computing Education
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM Koli Calling 2022.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Identity_Review_Koli22_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Identity_Review_Koli22_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Kapoor&Gardner-McCune_Koli2022_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Kapoor&Gardner-McCune_Koli2022_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
-                                    <a href="https://www.youtube.com/watch?v=CLNQP8lrYIk" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm hover:bg-red-200 transition-colors">
+                                    <a href="https://www.youtube.com/watch?v=CLNQP8lrYIk"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm hover:bg-red-100 transition-colors">
                                         <i class="fab fa-youtube mr-1"></i> Video
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 9 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3502717.3532159" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3502717.3532159" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Eliciting Course Feedback through a Bug Bounty Program
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor, Andrew Penton, and Hamish Pierpont.</p>
                                 <p class="text-gray-600 mb-3">ACM ITiCSE 2022.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/BugBounty_ITiCSE22_Kapoor,Penton&Pierpont_TTC.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/BugBounty_ITiCSE22_Kapoor,Penton&Pierpont_TTC.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Kapoor,Penton,Pierpont_ITiCSE2022_TTC_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Kapoor,Penton,Pierpont_ITiCSE2022_TTC_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 10 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3456565.3460033" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3456565.3460033" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Introducing a Technical Interview Preparation Activity in a Data Structures and Algorithms Course
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM ITiCSE 2021.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/TechnicalInterviews_ITiCSE21_Kapoor&Gardner-McCune_TTC.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/TechnicalInterviews_ITiCSE21_Kapoor&Gardner-McCune_TTC.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/TechnicalInterviews_ITiCSE21_Kapoor&Gardner-McCune_TTC_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/TechnicalInterviews_ITiCSE21_Kapoor&Gardner-McCune_TTC_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
                                 </div>
                                 <p class="text-gray-600 text-sm mt-2">Also presented at ACM Compute 2021.</p>
                                 <div class="flex flex-wrap gap-2 mt-2">
-                                    <a href="documents/research/slides/Kapoor&Gardner-McCune_Compute2021_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Kapoor&Gardner-McCune_Compute2021_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Compute 2021 Slides
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 11 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3328778.3366844" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3328778.3366844" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Exploring the Participation of CS Undergraduate Students in Industry Internships
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2020.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Internships_Participation_SIGCSE20_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Internships_Participation_SIGCSE20_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
-                                    <a href="documents/research/slides/Internships_Participation_SIGCSE20_Kapoor&Gardner-McCune_Slides.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/slides/Internships_Participation_SIGCSE20_Kapoor&Gardner-McCune_Slides.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fa-solid fa-file-powerpoint mr-1"></i> Slides
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 12 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3373165.3373181" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3373165.3373181" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Barriers to Securing Industry Internships in Computing
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM ACE 2020.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Internships_Barriers_ACE20_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Internships_Barriers_ACE20_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 13 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://doi.org/10.1145/3304221.3319764" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://doi.org/10.1145/3304221.3319764" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Understanding CS Undergraduate Students' Professional Identity through the lens of their Professional Development
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM ITiCSE 2019.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Professional_Identity_ITiCSE19_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Professional_Identity_ITiCSE19_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 14 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3287324.3287408" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3287324.3287408" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Understanding CS Undergraduate Students' Professional Development through the Lens of Internship Experiences
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2019.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Internships_Experiences_SIGCSE19_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Internships_Experiences_SIGCSE19_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 15 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3293881.3295782" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3293881.3295782" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Modelling Competencies for Computing Education beyond 2020: A Research Based Approach to Defining Competencies in the Computing Disciplines
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Stephen Frezza, Mats Daniels, Arnold Pears, Åsa Cajander, Viggo Kann, Amanpreet Kapoor, Roger McDermott, Anne-Kathrin Peters, Mihaela Sabin, and Charles Wallace.</p>
                                 <p class="text-gray-600 mb-3">ACM ITiCSE 2018.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/ModellingCompetencies_ITiCSE18_Frezza_etal.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/ModellingCompetencies_ITiCSE18_Frezza_etal.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 16 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3197091.3197113" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3197091.3197113" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Considerations for Switching: Exploring Factors behind CS Students' Desire to Leave a CS Major
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM ITiCSE 2018.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Considerations_Switching_ITiCSE18_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Considerations_Switching_ITiCSE18_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Paper 17 -->
-                            <div class="border-l-4 border-blue-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-blue-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3159450.3159474" target="_blank" 
-                                       class="text-blue-800 hover:text-blue-900 underline decoration-2 underline-offset-2">
+                                    <a href="https://dl.acm.org/doi/10.1145/3159450.3159474" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors">
                                         Understanding Professional Identities and Goals of Computer Science Undergraduate Student
                                     </a>
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2018.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/papers/Understanding_Identities&Goals_SIGCSE18_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Understanding_Identities&Goals_SIGCSE18_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
@@ -536,115 +574,109 @@
 
                     <!-- Referred Conference Posters -->
                     <div id="posters" class="mb-12">
-                        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 pb-4 border-b-2 border-green-200">
+                        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 pb-4 border-b-2 border-emerald-200">
                             Referred Conference Posters
                         </h2>
-                        
+
                         <div class="space-y-6">
-                            <!-- Poster 1 -->
-                            <div class="border-l-4 border-green-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-emerald-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     Understanding Undergraduate Students' Participation in Computing Clubs
                                 </h3>
                                 <p class="text-gray-700 mb-2">Brooke Nelson, Amanpreet Kapoor, and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2024.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="https://dl.acm.org/doi/abs/10.1145/3626253.3635394" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="https://dl.acm.org/doi/abs/10.1145/3626253.3635394"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-alt mr-1"></i> Abstract
                                     </a>
-                                    <a href="documents/research/posters/Clubs_SIGCSE24_Nelson_etal.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/posters/Clubs_SIGCSE24_Nelson_etal.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fas fa-image mr-1"></i> Poster
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Poster 2 -->
-                            <div class="border-l-4 border-green-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-emerald-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     Understanding Aspiring UX Professionals' Professional Development
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">UXPA 2019.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="documents/research/posters/UX_Professional_Personas_UXPA19_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/posters/UX_Professional_Personas_UXPA19_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fas fa-image mr-1"></i> Poster
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Poster 3 -->
-                            <div class="border-l-4 border-green-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-emerald-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     Deconstructing Successful and Unsuccessful Computer Science Undergraduate Interns
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor.</p>
                                 <p class="text-gray-600 mb-3 flex items-center">
-                                    ACM SIGCSE 2019. 
+                                    ACM SIGCSE 2019.
                                     <i class="fas fa-trophy text-yellow-500 ml-2" title="Award Winner"></i>
                                 </p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3287324.3293711" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="https://dl.acm.org/doi/10.1145/3287324.3293711"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-alt mr-1"></i> Abstract
                                     </a>
-                                    <a href="documents/research/posters/Deconstructing_Internships_SIGCSE19_Kapoor.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/posters/Deconstructing_Internships_SIGCSE19_Kapoor.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fas fa-image mr-1"></i> Poster
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Poster 4 -->
-                            <div class="border-l-4 border-green-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-emerald-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     Assessing the Impact of Virtual Human's Appearance on Users' Trust Levels
                                 </h3>
                                 <p class="text-gray-700 mb-2">Mohan Zalake, Julia Woodward, Amanpreet Kapoor, and Benjamin Lok.</p>
                                 <p class="text-gray-600 mb-3">ACM IVA 2018.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3267851.3267863" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="https://dl.acm.org/doi/10.1145/3267851.3267863"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-alt mr-1"></i> Abstract
                                     </a>
-                                    <a href="documents/research/papers/Appearance_Trust_IVA18_Zalake_etal.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="documents/research/papers/Appearance_Trust_IVA18_Zalake_etal.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-pdf mr-1"></i> Paper
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Poster 5 -->
-                            <div class="border-l-4 border-green-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-emerald-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     Usability Challenges that Novice Programmers Experience when Using Scratch for the First Time
                                 </h3>
                                 <p class="text-gray-700 mb-2">Yerika Jimenez, Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">IEEE VL/HCC 2019.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="https://doi.org/10.1109/VLHCC.2018.8506560" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="https://doi.org/10.1109/VLHCC.2018.8506560"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-alt mr-1"></i> Abstract
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Poster 6 -->
-                            <div class="border-l-4 border-green-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-emerald-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     Understanding How Computer Science Undergraduate Students are Developing their Professional Identities
                                 </h3>
                                 <p class="text-gray-700 mb-2">Amanpreet Kapoor and Christina Gardner-McCune.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2018.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3159450.3162322" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="https://dl.acm.org/doi/10.1145/3159450.3162322"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-alt mr-1"></i> Abstract
                                     </a>
-                                    <a href="documents/research/posters/Pofessional_Identities_SIGCSE18_Kapoor&Gardner-McCune.pdf" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm hover:bg-green-200 transition-colors">
+                                    <a href="documents/research/posters/Pofessional_Identities_SIGCSE18_Kapoor&Gardner-McCune.pdf"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition-colors">
                                         <i class="fas fa-image mr-1"></i> Poster
                                     </a>
                                 </div>
@@ -654,25 +686,24 @@
 
                     <!-- Referred Demos -->
                     <div id="demos" class="mb-12">
-                        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 pb-4 border-b-2 border-purple-200">
+                        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 pb-4 border-b-2 border-orange-200">
                             Referred Demos
                         </h2>
-                        
+
                         <div class="space-y-6">
-                            <!-- Demo 1 -->
-                            <div class="border-l-4 border-purple-500 pl-6 hover-lift">
+                            <div class="border-l-4 border-orange-500 pl-6 pub-item">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                     Edugator: An AI-enabled Tool for Creating and Delivering Interactive Computing Content
                                 </h3>
                                 <p class="text-gray-700 mb-2">Marc Diaz, Dustin Karp, Prayuj Tuli, and Amanpreet Kapoor.</p>
                                 <p class="text-gray-600 mb-3">ACM SIGCSE 2025.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="https://dl.acm.org/doi/10.1145/3641555.3705025" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                                    <a href="https://dl.acm.org/doi/10.1145/3641555.3705025"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm hover:bg-blue-100 transition-colors">
                                         <i class="fas fa-file-alt mr-1"></i> Abstract
                                     </a>
-                                    <a href="https://edugator.app/" 
-                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm hover:bg-purple-200 transition-colors">
+                                    <a href="https://edugator.app/"
+                                       target="_blank" class="inline-flex items-center px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm hover:bg-orange-100 transition-colors">
                                         <i class="fas fa-external-link-alt mr-1"></i> Software
                                     </a>
                                 </div>
@@ -684,58 +715,60 @@
 
             <!-- Sidebar -->
             <div class="lg:col-span-1">
-                <div class="bg-white rounded-xl card-shadow p-6 sticky top-24">
+                <div class="bg-white rounded-2xl card-shadow p-6 sticky top-24 border border-gray-100 animate-in">
                     <!-- Profile Image -->
                     <div class="text-center mb-6">
-                        <img src="images/kapoor.png" alt="Amanpreet Kapoor" 
-                             class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-200 shadow-lg">
+                        <div class="profile-ring w-36 h-36 mx-auto mb-4">
+                            <img src="images/kapoor.png" alt="Amanpreet Kapoor"
+                                 class="w-full h-full rounded-full object-cover bg-white">
+                        </div>
                         <h3 class="text-xl font-bold text-gray-900">Amanpreet Kapoor</h3>
-                        <p class="text-gray-600 mt-1">Instructional Associate Professor</p>
-                        <p class="text-blue-800 font-medium">
-                            <a href="https://www.ufl.edu/" target="_blank" class="hover:text-blue-900">
+                        <p class="text-gray-500 mt-1 text-sm">Instructional Associate Professor</p>
+                        <p class="font-medium mt-0.5">
+                            <a href="https://www.ufl.edu/" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors">
                                 University of Florida
                             </a>
                         </p>
                     </div>
 
                     <!-- Social Links -->
-                    <div class="flex justify-center space-x-3 mb-6">
-                        <a href="https://dblp.uni-trier.de/pers/hd/k/Kapoor:Amanpreet" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="DBLP">
-                            <i class="ai ai-dblp ai-2x"></i>
+                    <div class="flex justify-center flex-wrap gap-2 mb-6">
+                        <a href="https://dblp.uni-trier.de/pers/hd/k/Kapoor:Amanpreet" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="DBLP">
+                            <i class="ai ai-dblp ai-lg"></i>
                         </a>
-                        <a href="https://scholar.google.com/citations?user=dKUH-tcAAAAJ&hl=en" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="Google Scholar">
-                            <i class="ai ai-google-scholar-square ai-2x"></i>
+                        <a href="https://scholar.google.com/citations?user=dKUH-tcAAAAJ&hl=en" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="Google Scholar">
+                            <i class="ai ai-google-scholar-square ai-lg"></i>
                         </a>
-                        <a href="https://dl.acm.org/profile/99659244557" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="ACM Digital Library">
-                            <i class="ai ai-acmdl ai-2x"></i>
+                        <a href="https://dl.acm.org/profile/99659244557" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="ACM Digital Library">
+                            <i class="ai ai-acmdl ai-lg"></i>
                         </a>
-                        <a href="https://www.researchgate.net/profile/Amanpreet_Kapoor" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="Research Gate">
-                            <i class="ai ai-researchgate ai-2x"></i>
+                        <a href="https://www.researchgate.net/profile/Amanpreet_Kapoor" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="Research Gate">
+                            <i class="ai ai-researchgate ai-lg"></i>
                         </a>
-                        <a href="https://twitter.com/kapo_or" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="Twitter">
-                            <i class="fab fa-twitter fa-2x"></i>
+                        <a href="https://twitter.com/kapo_or" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="Twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
                         </a>
-                        <a href="https://github.com/kapooramanpreet" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="GitHub">
-                            <i class="fab fa-github fa-2x"></i>
+                        <a href="https://github.com/kapooramanpreet" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="GitHub">
+                            <i class="fab fa-github fa-lg"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/kapooramanpreet/" target="_blank" 
-                           class="text-gray-600 hover:text-blue-800 transition-colors" title="LinkedIn">
-                            <i class="fab fa-linkedin fa-2x"></i>
+                        <a href="https://www.linkedin.com/in/kapooramanpreet/" target="_blank"
+                           class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="LinkedIn">
+                            <i class="fab fa-linkedin fa-lg"></i>
                         </a>
                     </div>
 
                     <!-- CV Link -->
                     <div class="text-center">
-                        <a href="documents/personal/Amanpreet_Kapoor_CV.pdf" target="_blank" 
-                           class="inline-flex items-center px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors font-medium">
+                        <a href="documents/personal/Amanpreet_Kapoor_CV.pdf" target="_blank"
+                           class="inline-flex items-center px-5 py-2.5 bg-[#0021A5] text-white rounded-lg hover:bg-[#001a84] transition-all font-medium shadow-md hover:shadow-lg">
                             <i class="fas fa-download mr-2"></i>
-                            CV
+                            Download CV
                         </a>
                     </div>
                 </div>
@@ -744,9 +777,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Amanpreet Kapoor. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 Amanpreet Kapoor. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -769,18 +804,6 @@
                     });
                 }
             });
-        });
-
-        // Show more papers functionality (placeholder)
-        document.getElementById('show-more-papers').addEventListener('click', function() {
-            const morePapers = document.getElementById('more-papers');
-            if (morePapers.classList.contains('hidden')) {
-                morePapers.classList.remove('hidden');
-                this.textContent = 'Show Less Papers';
-            } else {
-                morePapers.classList.add('hidden');
-                this.textContent = 'Show More Papers';
-            }
         });
     </script>
 
