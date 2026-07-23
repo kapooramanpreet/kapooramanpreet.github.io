@@ -224,8 +224,33 @@ body::before {
     color: var(--heading);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.85rem;
 }
+
+/* Rounded gradient icon badge for section titles */
+.card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.85rem;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-title:hover .card-icon { transform: translateY(-2px) rotate(-4deg); }
+
+.card-icon.i-blue   { color: #60a5fa; background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(59,130,246,0.08)); border-color: rgba(59,130,246,0.30); box-shadow: 0 8px 20px -10px rgba(59,130,246,0.6); }
+.card-icon.i-green  { color: #34d399; background: linear-gradient(135deg, rgba(16,185,129,0.22), rgba(16,185,129,0.08)); border-color: rgba(16,185,129,0.30); box-shadow: 0 8px 20px -10px rgba(16,185,129,0.6); }
+.card-icon.i-orange { color: #fb923c; background: linear-gradient(135deg, rgba(249,115,22,0.22), rgba(249,115,22,0.08)); border-color: rgba(249,115,22,0.30); box-shadow: 0 8px 20px -10px rgba(249,115,22,0.6); }
+.card-icon.i-amber  { color: #fbbf24; background: linear-gradient(135deg, rgba(245,158,11,0.22), rgba(245,158,11,0.08)); border-color: rgba(245,158,11,0.30); box-shadow: 0 8px 20px -10px rgba(245,158,11,0.6); }
+
+:root.light .card-icon.i-blue   { color: #2563eb; }
+:root.light .card-icon.i-green  { color: #059669; }
+:root.light .card-icon.i-orange { color: #ea580c; }
+:root.light .card-icon.i-amber  { color: #d97706; }
 .section-title {
     text-align: center;
     font-size: 1.5rem;
