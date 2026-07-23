@@ -1,10 +1,8 @@
 // Shared behavior: theme toggle, mobile menu, smooth in-page scroll.
 
 function applyThemeIcon(theme) {
-    document.querySelectorAll('[data-theme-icon]').forEach(function (el) {
-        // Show the icon of the theme you can switch TO.
-        el.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    });
+    // Icons are toggled by CSS based on the root theme class; here we only
+    // keep the tooltip/label in sync with the theme you can switch TO.
     var label = theme === 'dark' ? 'Light mode' : 'Dark mode';
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {
         btn.setAttribute('title', label);

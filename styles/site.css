@@ -171,6 +171,11 @@ body::before {
     border-color: var(--border-strong);
     background: color-mix(in srgb, var(--accent) 14%, transparent);
 }
+/* Show the icon of the theme you can switch TO; toggled purely via CSS
+   so it works even after Font Awesome swaps the <i> for an <svg>. */
+.theme-icon-sun, .theme-icon-moon { display: none; }
+:root.dark .theme-icon-sun { display: inline-block; }
+:root.light .theme-icon-moon { display: inline-block; }
 
 .icon-btn {
     color: var(--muted);
